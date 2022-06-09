@@ -13,7 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "base"
-include ':app'
-include ':app:features'
-include ':app:features:home'
-include ':ui'
+include ':app',
+        ':app:features',
+        ':app:features:home',
+        ':ui'
