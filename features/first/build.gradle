@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "br.com.base"
+        applicationId "br.com.first"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -32,32 +32,27 @@ android {
 }
 
 dependencies {
-    def nav_version = "2.4.2"
+
     def koin_version= "3.2.0"
     def lifecycle = "2.2.0"
 
-    implementation 'androidx.core:core-ktx:1.8.0'
+    // local libs
+    implementation project(":navigation")
+    implementation project(":ui")
+
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
 
-    implementation 'com.google.android.material:material:1.6.1'
-
-    // local libs
-    implementation project(":ui")
-    implementation project(":navigation")
-    implementation project(":features:first")
-    implementation project(":features:second")
-
-    implementation "io.insert-koin:koin-android:$koin_version"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
     // Koin Test
     testImplementation "io.insert-koin:koin-test:$koin_version"

@@ -1,10 +1,6 @@
 package br.com.base.di
 
-import org.koin.dsl.module
+import br.com.first.di.firstFeatureModules
 
-val mainModule = module {
-
-}
-
-val modules = listOf(mainModule)
+val modules = listOf(firstFeatureModules)
 

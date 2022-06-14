@@ -11,8 +11,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app/features" />
-            <option value="$PROJECT_DIR$/app/features/home" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/first" />
+            <option value="$PROJECT_DIR$/features/second" />
+            <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/ui" />
           </set>
         </option>
