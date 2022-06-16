@@ -3,7 +3,7 @@ package br.com.ui.widgets.cardsgrid
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class Card(
+data class CardMenu(
     val id: String? = null,
     @DrawableRes val iconRes: Int? = null,
     val icon: String? = null,

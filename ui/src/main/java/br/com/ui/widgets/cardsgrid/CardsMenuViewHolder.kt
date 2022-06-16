@@ -1,7 +1,6 @@
 package br.com.ui.widgets.cardsgrid
 
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 
@@ -10,7 +9,7 @@ private const val UNDEFINED_ICON = -1
 internal class CardsViewHolder(private val rootView: CardView) :
     RecyclerView.ViewHolder(rootView) {
 
-    fun bind(item: Card) = with(rootView) {
+    fun bind(item: CardMenu) = with(rootView) {
 //        icon.configIcon(item.icon, item.iconRes, item.iconColor ?: R.color.apl_grayscale_900)
         title.configTextInfo(item.title, item.titleRes)
         subtitle.configTextInfo(item.subtitle, item.subtitleRes)
