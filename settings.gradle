@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 rootProject.name = "base"
 include ':app',
         ':ui',
-        ':features'
-include ':navigation'
-include ':features:first'
-include ':features:second'
+        ':features',
+        ':navigation',
+        ':features:first',
+        ':features:second'

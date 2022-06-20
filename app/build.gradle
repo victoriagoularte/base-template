@@ -32,19 +32,22 @@ android {
 }
 
 dependencies {
-    def nav_version = "2.4.2"
-    def koin_version= "3.2.0"
-    def lifecycle = "2.2.0"
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    def android = rootProject.ext.android
+    def java = rootProject.ext.java
+    def material = rootProject.ext.material
+    def localLibs = rootProject.ext.localLibs
 
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation android.core
+    implementation android.appCompat
+    implementation android.constraintLayout
+    implementation android.navigation
+    implementation android.navigationUi
+    implementation android.lifecycle
+    implementation android.viewModel
+
+    implementation material.material
+    implementation "io.insert-koin:koin-android:$koinVersion"
 
     // local libs
     implementation project(":ui")
@@ -52,14 +55,13 @@ dependencies {
     implementation project(":features:first")
     implementation project(":features:second")
 
-    implementation "io.insert-koin:koin-android:$koin_version"
 
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+    testImplementation java.junit
+    androidTestImplementation android.junit
+    androidTestImplementation android.espresso
+    androidTestImplementation android.navigationTest
 
     // Koin Test
-    testImplementation "io.insert-koin:koin-test:$koin_version"
-    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+    testImplementation "io.insert-koin:koin-test:$koinVersion"
+    testImplementation "io.insert-koin:koin-test-junit4:$koinVersion"
 }

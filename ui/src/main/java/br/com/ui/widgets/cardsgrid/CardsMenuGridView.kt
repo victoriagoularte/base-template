@@ -22,7 +22,7 @@ class CardsMenuGridView @JvmOverloads constructor(
 
     private fun setupConfigs() {
         adapter = listAdapter
-        layoutManager = GridLayoutManager(context, NUMBER_OF_COLS)
+        layoutManager = GridLayoutManager(context, NUMBER_OF_COLS, LinearLayoutManager.VERTICAL,false)
     }
 
     fun setList(list: List<CardMenu>) {
