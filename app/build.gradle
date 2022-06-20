@@ -32,10 +32,11 @@ android {
 }
 
 dependencies {
-
     def android = rootProject.ext.android
     def java = rootProject.ext.java
+    def koin = rootProject.ext.koin
     def material = rootProject.ext.material
+    def libs = rootProject.ext.libs
     def localLibs = rootProject.ext.localLibs
 
     implementation android.core
@@ -47,14 +48,14 @@ dependencies {
     implementation android.viewModel
 
     implementation material.material
-    implementation "io.insert-koin:koin-android:$koinVersion"
+    implementation koin.koin
+
+    implementation libs.ui
+    implementation libs.navigation
 
     // local libs
-    implementation project(":ui")
-    implementation project(":navigation")
-    implementation project(":features:first")
-    implementation project(":features:second")
-
+    implementation localLibs.firstFeature
+    implementation localLibs.secondFeature
 
     testImplementation java.junit
     androidTestImplementation android.junit
@@ -62,6 +63,6 @@ dependencies {
     androidTestImplementation android.navigationTest
 
     // Koin Test
-    testImplementation "io.insert-koin:koin-test:$koinVersion"
-    testImplementation "io.insert-koin:koin-test-junit4:$koinVersion"
+    testImplementation koin.test
+    testImplementation koin.testJunit
 }
