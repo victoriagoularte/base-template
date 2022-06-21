@@ -36,7 +36,9 @@ class FirstFragment : Fragment() {
 
         binding.cardsMenu.apply {
             setList(list)
-            setOnClickItemListener{ card, position -> Toast.makeText(context, card.title, Toast.LENGTH_LONG).show() }
+            setOnClickItemListener{ card, _ ->
+                Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
+            }
         }
 
 

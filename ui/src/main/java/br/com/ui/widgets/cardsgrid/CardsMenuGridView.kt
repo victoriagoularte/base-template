@@ -5,6 +5,8 @@ import android.util.AttributeSet
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import br.com.ui.R
 
 private const val NUMBER_OF_COLS = 3
 
@@ -22,7 +24,7 @@ class CardsMenuGridView @JvmOverloads constructor(
 
     private fun setupConfigs() {
         adapter = listAdapter
-        layoutManager = GridLayoutManager(context, NUMBER_OF_COLS, LinearLayoutManager.VERTICAL,false)
+        layoutManager = StaggeredGridLayoutManager(NUMBER_OF_COLS, LinearLayoutManager.VERTICAL)
     }
 
     fun setList(list: List<CardMenu>) {
