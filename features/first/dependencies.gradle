@@ -1,0 +1,15 @@
+ext {
+    flavor = getCurrentFlavor()
+    if(flavor.isEmpty()) {
+        flavor = dev
+    }
+
+    config = getProps('config/' + flavor + '.properties')
+}
+
+def getProps(path) {
+    Properties props = new Properties()
+    props.load(new FileInputStream(file(path)))
+    return props
+}
+

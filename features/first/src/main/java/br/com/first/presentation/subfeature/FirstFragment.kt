@@ -1,28 +1,33 @@
 package br.com.first.presentation.subfeature
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import br.com.first.R
-import br.com.first.databinding.ActivityFirstMainBinding
+import androidx.fragment.app.Fragment
 import br.com.first.databinding.FragmentFirstBinding
+import br.com.navigation.secondfeature.SecondFeatureNavigation
 import br.com.ui.widgets.cardsgrid.CardMenu
+import org.koin.android.ext.android.inject
 
 class FirstFragment : Fragment() {
 
     private lateinit var binding: FragmentFirstBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View? {
+    private val secondFeatureNavigation: SecondFeatureNavigation by inject()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setMenuItems()
     }
 
@@ -34,14 +39,14 @@ class FirstFragment : Fragment() {
         list.add(CardMenu(title = "Item 4", subtitle = "Desc 4"))
         list.add(CardMenu(title = "Item 5", subtitle = "Desc 5"))
 
-        binding.cardsMenu.apply {
+        with(binding.cardsMenu) {
             setList(list)
-            setOnClickItemListener{ card, _ ->
-                Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
+            setOnClickItemListener { card, position ->
+                when (position) {
+                    0 -> secondFeatureNavigation.navigateToSecond(requireContext())
+                    else -> Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
+                }
             }
         }
-
-
     }
-
 }

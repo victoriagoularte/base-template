@@ -16,6 +16,8 @@ ext {
     androidJunitVersion = '1.1.3'
     javaJunitVersion = '1.1.3'
     espressoVersion = '3.4.0'
+    retrofitVersion = '2.9.0'
+    coroutinesVersion = '1.3.9'
 
     // android dependencies
     android = [
@@ -32,6 +34,10 @@ ext {
             navigationTest: "androidx.navigation:navigation-testing:$navigationVersion",
     ]
 
+    kotlin = [
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    ]
+
     java = [
          junit: "junit:junit:$javaJunitVersion"
     ]
@@ -44,6 +50,12 @@ ext {
             koin: "io.insert-koin:koin-android:$koinVersion",
             test: "io.insert-koin:koin-test:$koinVersion",
             testJunit: "io.insert-koin:koin-test-junit4:$koinVersion",
+    ]
+
+    network = [
+            retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            gson: "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
     ]
 
     libs = [
