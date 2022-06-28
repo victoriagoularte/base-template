@@ -1,13 +1,17 @@
 package br.com.first.presentation.subfeature
 
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
+import androidx.core.text.toSpannable
 import androidx.fragment.app.Fragment
 import br.com.first.databinding.FragmentFirstBinding
 import br.com.navigation.secondfeature.SecondFeatureNavigation
+import br.com.ui.dialogs.bottomsheet.BottomSheetDSLBuilder.Companion.bottomSheet
 import br.com.ui.widgets.cardsgrid.CardMenu
 import org.koin.android.ext.android.inject
 
@@ -44,6 +48,10 @@ class FirstFragment : Fragment() {
             setOnClickItemListener { card, position ->
                 when (position) {
                     0 -> secondFeatureNavigation.navigateToSecond(requireContext())
+                    1 -> bottomSheet {
+                        title = "titulo item 1".toSpannable()
+                        description = Html.fromHtml("lorem ipsum <b>bla bla</b> bla").toSpannable()
+                    }
                     else -> Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
                 }
             }

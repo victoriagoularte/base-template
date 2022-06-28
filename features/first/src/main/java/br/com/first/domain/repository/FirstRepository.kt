@@ -1,5 +1,5 @@
 package br.com.first.domain.repository
 
-interface FirstRepository {
+internal interface FirstRepository {
     //    fun getSomething() : Flow<Some>
 }

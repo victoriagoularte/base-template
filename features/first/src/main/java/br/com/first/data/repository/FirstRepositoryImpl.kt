@@ -4,7 +4,7 @@ import br.com.first.data.datasource.FirstDataSource
 import br.com.first.domain.repository.FirstRepository
 
 class FirstRepositoryImpl(dataSource: FirstDataSource) : FirstRepository {
-    //    fun getSomething() : Flow<Some> {
+    //    fun getSomething() : Flow<Some> = flow {
     //      implement mapper
     //      dataSource.getSomething().map
     // }
