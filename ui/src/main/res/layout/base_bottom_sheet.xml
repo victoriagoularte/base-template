@@ -59,6 +59,7 @@
                 android:layout_marginStart="@dimen/spacing_04"
                 android:layout_marginTop="@dimen/spacing_06"
                 android:layout_marginEnd="@dimen/spacing_04"
+                android:fontFamily="More Fonts..."
                 android:textAlignment="center"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"

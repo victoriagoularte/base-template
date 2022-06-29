@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
     </style>
@@ -7,4 +8,123 @@
     <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bg_bottom_sheet</item>
     </style>
+
+    <!--    init text region -->
+    <style name="BaseTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="BaseTextHeadeline1" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto_light</item>
+        <item name="android:textSize">@dimen/headline_01</item>
+        <item name="android:letterSpacing">-1.5</item>
+    </style>
+
+    <style name="BaseTextHeadeline2" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto_light</item>
+        <item name="android:textSize">@dimen/headline_02</item>
+        <item name="android:letterSpacing">-0.5</item>
+    </style>
+
+    <style name="BaseTextHeadeline3" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/headline_03</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="BaseTextHeadeline4" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/headline_04</item>
+        <item name="android:letterSpacing">0.25</item>
+    </style>
+
+    <style name="BaseTextHeadeline5" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/headline_05</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="BaseTextHeadeline6" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/headline_06</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="BaseTextSubtitle1" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/subtitle_01</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="BaseTextSubtitle2" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/subtitle_02</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="BaseTextBody1" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/body_01</item>
+        <item name="android:letterSpacing">0.15</item>
+    </style>
+
+    <style name="BaseTextBody2" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/body_02</item>
+        <item name="android:letterSpacing">0.1</item>
+    </style>
+
+    <style name="BaseTextCaption" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/caption</item>
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+
+    <style name="BaseButtonText" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/button</item>
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+
+    <style name="BaseOverlineText" parent="BaseTextView">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/overline</item>
+        <item name="android:letterSpacing">1.5</item>
+        <item name="textAllCaps">true</item>
+    </style>
+    <!--    end text region -->
+
+    <!--  init button region  -->
+    <style name="BaseButton" parent="Widget.AppCompat.Button">
+        <item name="textAllCaps">false</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="PrimaryBaseButton" parent="BaseButton">
+        <item name="background">@drawable/bg_primary_base_button</item>
+    </style>
+
+    <style name="SecondaryBaseButton" parent="BaseButton">
+        <item name="background">@drawable/bg_primary_base_button</item>
+        <item name="backgroundColor">@color/material_dynamic_secondary0</item>
+    </style>
+
+    <style name="OutlineBaseButton" parent="BaseButton">
+        <item name="background">@drawable/bg_outline_base_button</item>
+    </style>
+
+    <style name="PrimarySmallBaseButton" parent="PrimaryBaseButton">
+
+    </style>
+
+    <style name="PrimaryMediumBaseButton" parent="PrimaryBaseButton">
+        <item name="background">@drawable/bg_primary_base_button</item>
+    </style>
+
+    <style name="PrimaryLargeBaseButton" parent="PrimaryBaseButton">
+        <item name="background">@drawable/bg_primary_base_button</item>
+    </style>
+
+    <!--  end button region  -->
 </resources>

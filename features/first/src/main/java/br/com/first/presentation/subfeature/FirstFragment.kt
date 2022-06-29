@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.text.HtmlCompat.FROM_HTML_MODE_COMPACT
 import androidx.core.text.toSpannable
 import androidx.fragment.app.Fragment
 import br.com.first.databinding.FragmentFirstBinding
@@ -50,7 +49,7 @@ class FirstFragment : Fragment() {
                     0 -> secondFeatureNavigation.navigateToSecond(requireContext())
                     1 -> bottomSheet {
                         title = "titulo item 1".toSpannable()
-                        description = Html.fromHtml("lorem ipsum <b>bla bla</b> bla").toSpannable()
+                        description = Html.fromHtml("lorem ipsum <b>bla bla</b> bla", Html.FROM_HTML_MODE_COMPACT).toSpannable()
                     }
                     else -> Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
                 }

@@ -14,4 +14,18 @@
     <dimen name="spacing_11">56dp</dimen>
     <dimen name="spacing_12">64dp</dimen>
     <dimen name="spacing_13">72dp</dimen>
+
+    <dimen name="headline_01">96sp</dimen>
+    <dimen name="headline_02">60sp</dimen>
+    <dimen name="headline_03">48sp</dimen>
+    <dimen name="headline_04">34sp</dimen>
+    <dimen name="headline_05">24sp</dimen>
+    <dimen name="headline_06">20sp</dimen>
+    <dimen name="subtitle_01">16sp</dimen>
+    <dimen name="subtitle_02">14sp</dimen>
+    <dimen name="body_01">16sp</dimen>
+    <dimen name="body_02">14sp</dimen>
+    <dimen name="caption">12sp</dimen>
+    <dimen name="button">14sp</dimen>
+    <dimen name="overline">10sp</dimen>
 </resources>
