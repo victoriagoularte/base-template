@@ -8,6 +8,7 @@
     <!--    init button region -->
     <declare-styleable name="BaseButton">
         <attr name="btnText" format="reference|string"/>
+        <attr name="style" format="reference"/>
     </declare-styleable>
     <!--    end button region -->
 </resources>
