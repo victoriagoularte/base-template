@@ -62,10 +62,12 @@ class FirstFragment : Fragment() {
                             Html.FROM_HTML_MODE_COMPACT
                         ).toSpannable()
                         button {
+                            context = this@FirstFragment.requireContext()
                             text = "Clique"
                             style = R.style.PrimaryBaseButton
                         }
                         button {
+                            context = this@FirstFragment.requireContext()
                             text = "teste"
                             style = R.style.SecondaryBaseButton
                             onClick =

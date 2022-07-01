@@ -46,7 +46,8 @@ class BaseButton @JvmOverloads constructor(
 //    }
 
 
-    class Builder(context: Context) {
+    class Builder() {
+        var context: Context? = null
         @StringRes
         var textRes: Int? = null
         var text: String? = null
