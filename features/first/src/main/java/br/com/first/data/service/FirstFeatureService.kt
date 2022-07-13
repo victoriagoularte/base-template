@@ -1,8 +1,10 @@
 package br.com.first.data.service
 
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
+import retrofit2.http.GET
 
 interface FirstFeatureService {
-//    fun getSomething() : Flow<SomeResponse>
+
+//    @GET("some/endpoint")
+//    suspend fun getSomething(): Response
 }

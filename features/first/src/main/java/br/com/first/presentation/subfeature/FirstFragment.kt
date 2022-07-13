@@ -10,7 +10,7 @@ import androidx.core.text.toSpannable
 import androidx.fragment.app.Fragment
 import br.com.first.databinding.FragmentFirstBinding
 import br.com.navigation.secondfeature.SecondFeatureNavigation
-import br.com.ui.R
+import br.com.ui.dialogs.bottomsheet.ActionListener
 import br.com.ui.dialogs.bottomsheet.BaseBottomSheet.Companion.baseBottomSheet
 import br.com.ui.widgets.cardsgrid.CardMenu
 import org.koin.android.ext.android.inject
@@ -54,27 +54,25 @@ class FirstFragment : Fragment() {
                             "lorem ipsum <b>bla bla</b> bla",
                             Html.FROM_HTML_MODE_COMPACT
                         ).toSpannable()
-                    }.show(childFragmentManager, FirstFragment::class.java.simpleName)
+                    }
                     2 -> baseBottomSheet {
                         title = "titulo item".toSpannable()
-                        description = Html.fromHtml(
-                            "lorem ipsum <b>bla bla</b> bla",
-                            Html.FROM_HTML_MODE_COMPACT
-                        ).toSpannable()
+                        description = "teste"
                         button {
-                            context = this@FirstFragment.requireContext()
                             text = "Clique"
-                            style = R.style.PrimaryBaseButton
                         }
-                        button {
-                            context = this@FirstFragment.requireContext()
+                        cancelButton {
                             text = "teste"
-                            style = R.style.SecondaryBaseButton
-                            onClick =
-                                { Toast.makeText(context, card.title, Toast.LENGTH_LONG).show() }
+                            onClick = ActionListener {
+                                Toast.makeText(
+                                    context,
+                                    card.title,
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
                         }
 
-                    }.show(childFragmentManager, FirstFragment::class.java.simpleName)
+                    }
                     else -> Toast.makeText(context, card.title, Toast.LENGTH_LONG).show()
                 }
             }

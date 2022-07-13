@@ -61,6 +61,7 @@ dependencies {
 
     implementation material.material
     implementation network.retrofit
+    implementation network.logging
     implementation network.gson
     implementation koin.koin
     implementation kotlin.coroutines
