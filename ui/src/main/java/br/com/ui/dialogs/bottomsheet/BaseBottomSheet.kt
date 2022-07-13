@@ -13,6 +13,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import br.com.ui.databinding.BaseBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -48,7 +49,7 @@ class BaseBottomSheet : BottomSheetDialogFragment() {
             title = getCharSequence(TITLE, "")
             titleRes = getInt(TITLE_RES, NOT_RESOURCE)
             description = getCharSequence(DESCRIPTION, "")
-            descriptionRes = getInt(DESCRIPTION_RES)
+            descriptionRes = getInt(DESCRIPTION_RES, NOT_RESOURCE)
             illustration = getInt(ILLU, NOT_RESOURCE)
             buttonBuilder = getParcelable(BUTTON)
             cancelButtonBuilder = getParcelable(CANCEL_BUTTON)
@@ -111,7 +112,7 @@ class BaseBottomSheet : BottomSheetDialogFragment() {
         const val BUTTON = "BUTTON"
         const val CANCEL_BUTTON = "CANCEL_BUTTON"
 
-        inline fun FragmentActivity.baseBottomSheet(block: BottomSheetBuilder.() -> Unit) {
+        inline fun Fragment.baseBottomSheet(block: BottomSheetBuilder.() -> Unit) {
             val bottomSheet = BottomSheetBuilder().apply(block)
             BaseBottomSheet().apply {
                 arguments = bundleOf(
@@ -124,7 +125,7 @@ class BaseBottomSheet : BottomSheetDialogFragment() {
                     CANCEL_BUTTON to bottomSheet.cancelButton,
                 )
                 isCancelable = bottomSheet.isCancelable
-            }.show(supportFragmentManager, BaseBottomSheet::class.java.name)
+            }.show(childFragmentManager, BaseBottomSheet::class.java.name)
         }
     }
 }
